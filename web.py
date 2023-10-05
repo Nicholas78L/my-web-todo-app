@@ -13,7 +13,7 @@ def add_todo():
     # value  is - what the user will enter in 'st.text_input()'.
     # but st.session_state[] - is a session_state type (specific object type of streamlit)
     # it looks like we call the key ['new_todo'] and
-    # get the value (what the user enter), and store it in variable 'todo'
+    # get the value (what the user enter), and store it in variable '_todo'
     todos.append(todo)
     functions.write_todos(todos)
 
@@ -25,9 +25,9 @@ st.text('This app is to increase your productivity.')
 for index, todo in enumerate(todos):
     checkbox = st.checkbox(todo, key=todo)
     if checkbox:
-        todos.pop(index) # delete the complete todo from the list
-        functions.write_todos(todos)  # rewrite the todo list
-        del st.session_state[todo]  # delete the complete todo (with checkbox)
+        todos.pop(index) # delete the complete _todo from the list
+        functions.write_todos(todos)  # rewrite the _todo list
+        del st.session_state[todo]  # delete the complete _todo (with checkbox)
         # from the st.session_state "dictionary"
         st.rerun()  # rerun streamlit
 
