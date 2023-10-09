@@ -35,5 +35,3 @@ st.text_input(label='Enter a todo: ', placeholder='Add your new todo...',
               on_change=add_todo, key='new_todo')  # on_change is an argument
             # which equals to callback or, in other words,
             #  customer function ('add_todo()' - in our case).
-
-print('Hello! How are you, man?')
